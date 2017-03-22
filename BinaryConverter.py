@@ -2,8 +2,8 @@
 # Convert integers to binary and back
 #
 # Usage:
-# Binary to decimals: convertToDecimals(string)
-# Decimals to binary: convertToBinary(integer)
+# Binary to decimals: convert_to_decimals(string)
+# Decimals to binary: convert_to_binary(integer)
 #
 # Notes:
 # - You can't convert numbers above 255 and below 0
@@ -11,7 +11,7 @@
 #
 # License: BSD
 
-def convertToDecimals(binary):
+def convert_to_decimals(binary):
     if len(binary) != 8:
         return 0
 
@@ -27,7 +27,7 @@ def convertToDecimals(binary):
 
     return result
 
-def convertToBinary(decimals):
+def convert_to_binary(decimals):
     binary = [0, 0, 0, 0, 0, 0, 0, 0]
 
     current_number = decimals
@@ -42,7 +42,32 @@ def convertToBinary(decimals):
     for i in binary:
         result += str(i)
 
+    result = result[:4] + ' ' + result[4:]
+
     return result
 
-print (convertToDecimals('00010110'))
-print (convertToBinary(22))
+def request_input():
+    print ('Enter [decimals] to convert from binary to decimals. Enter [binary] to convert from decimals to binary. Press [quit] to cancel')
+
+    type_input = input()
+    if type_input == 'quit':
+        return -1
+    elif type_input == 'decimals':
+        print ('Please enter a binary number (no spaces), with leading zeros:')
+
+        binary_input = input()
+        return convert_to_decimals(str(binary_input))
+    else:
+        print ('Please enter a decimal number:')
+
+        decimal_input = input()
+        return convert_to_binary(int(decimal_input))
+
+while True:
+    result = request_input()
+
+    if result == -1:
+        print ('Goodbye!')
+        break
+    else:
+        print ('Result:', result)
