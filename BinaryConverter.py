@@ -66,11 +66,12 @@ def request_input():
         decimal_input = input()
         return convert_to_binary(int(decimal_input))
 
-while True:
-    result = request_input()
+if __name__ == '__main__':
+    while True:
+        result = request_input()
 
-    if result == -1:
-        print ('Goodbye!')
-        break
-    else:
-        print ('Result:', result)
+        if result == -1:
+            print ('Goodbye!')
+            break
+        else:
+            print ('Result:', result)
