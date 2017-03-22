@@ -1,3 +1,16 @@
+# *** Binary Converter ***
+# Convert integers to binary and back
+#
+# Usage:
+# Binary to decimals: convertToDecimals(string)
+# Decimals to binary: convertToBinary(integer)
+#
+# Notes:
+# - You can't convert numbers above 255 and below 0
+# - Binary numbers must be passed as a string (due to a Python limitation)
+#
+# License: BSD
+
 def convertToDecimals(binary):
     if len(binary) != 8:
         return 0
