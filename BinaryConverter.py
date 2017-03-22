@@ -12,8 +12,11 @@
 # License: BSD
 
 def convert_to_decimals(binary):
-    if len(binary) != 8:
+    if len(binary) != 8 and len (binary) != 9:
         return 0
+
+    if len(binary) == 9:
+        binary = binary[:4] + binary[4:]
 
     calculations = (1, 2, 4, 8, 16, 32, 64, 128)
     result = 0
