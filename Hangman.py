@@ -1,5 +1,5 @@
 # *** Hangman ***
-# Convert integers to binary and back
+# Simple hangman game
 #
 # Usage:
 # Open a terminal and enter the following command while in the
@@ -22,8 +22,8 @@ class Game:
         print ('Starting new game... you have seven lives! Good luck!')
 
         self.word = random.choice(self.word_list)
-        self.won = False
-        self.lost = False
+        won = False
+        lost = False
 
         self.current_letters = []
         self.used_letters = []
@@ -34,7 +34,7 @@ class Game:
             self.current_letters.append('_')
 
         while not self.won and not self.lost:
-            self.lost = self.has_lost()
+            lost = self.has_lost()
 
             for i in self.current_letters:
                 print (i, end=' ')
@@ -45,11 +45,11 @@ class Game:
 
             self.request_input()
 
-            self.won = '' . join(self.current_letters) == self.word
+            won = '' . join(self.current_letters) == self.word
 
         print (self.word)
 
-        if self.lost:
+        if lost:
             print ('You lost... :(')
         else:
             print ('Yay, you won!')
