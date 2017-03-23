@@ -78,6 +78,12 @@ def display_binary_numbers(min, max):
     for i in range(min, max):
         print (str(i) + ' = ' + convert_to_binary(i))
 
+def binary_sum_to_decimals(binary1, binary2):
+    i = convert_to_decimals(binary1)
+    j = convert_to_decimals(binary2)
+
+    return i + j
+
 if __name__ == '__main__':
     while True:
         result = request_input()
