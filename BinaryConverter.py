@@ -66,6 +66,18 @@ def request_input():
         decimal_input = input()
         return convert_to_binary(int(decimal_input))
 
+def display_binary_numbers(min, max):
+    max += 1
+
+    if max > 256:
+        max = 256
+
+    if min < 0:
+        min = 0
+
+    for i in range(min, max):
+        print (str(i) + ' = ' + convert_to_binary(i))
+
 if __name__ == '__main__':
     while True:
         result = request_input()
