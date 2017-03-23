@@ -20,13 +20,13 @@ def convert_to_decimals(binary):
 
     calculations = (1, 2, 4, 8, 16, 32, 64, 128)
     result = 0
-    calculation_number = 7;
+    calculation_number = 7
 
     for i in binary:
         if i == '1':
             result += calculations[calculation_number]
 
-        calculation_number -= 1;
+        calculation_number -= 1
 
     return result
 
